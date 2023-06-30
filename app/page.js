@@ -18,7 +18,7 @@ function Page() {
         }
 
         // else successful
-        console.log(result)
+        console.log(await result)
         return router.push("/admin")
     }
     return (<div className="wrapper">
@@ -27,11 +27,11 @@ function Page() {
             <form onSubmit={handleForm} className="form">
                 <label htmlFor="email">
                     <p>Email</p>
-                    <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" />
+                    <input className="text-black" onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" />
                 </label>
                 <label htmlFor="password">
                     <p>Password</p>
-                    <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" />
+                    <input className="text-black" onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" />
                 </label>
                 <button type="submit">Sign up</button>
             </form>

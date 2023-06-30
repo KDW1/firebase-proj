@@ -12,14 +12,14 @@ function Page() {
         event.preventDefault()
 
         const { result, error } = await signIn(email, password);
+        console.log(await result)
 
         if (error) {
-            return console.log(error)
+            console.log(error)
         }
-
+        console.log("Hello")
         // else successful
-        console.log(result)
-        return router.push("/admin")
+        // return router.push("/admin")
     }
     return (<div className="wrapper">
         <div className="form-wrapper">
@@ -27,12 +27,13 @@ function Page() {
             <form onSubmit={handleForm} className="form">
                 <label htmlFor="email">
                     <p>Email</p>
-                    <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" />
+                    <input className="text-black" onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" />
                 </label>
                 <label htmlFor="password">
                     <p>Password</p>
-                    <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" />
+                    <input className="text-black" onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" />
                 </label>
+                <button type="submit">Sign In</button>
             </form>
         </div>
 
